@@ -12,7 +12,7 @@ Please check Demo project for a basic example on how to use OCRSDK.
 ## Usage
 
 #### In your Activity Class
-
+```kotlin
 const val OCR_REQUEST: Int = 1000
 const val OCR_RES: String = "OCR_RES"
 
@@ -45,18 +45,37 @@ class MainActivity : AppCompatActivity() {
 it, simply add the following line to your build.gradle:
 
 **MAVEN** 
-allprojects {
+```gradle
+
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories
+	
+	<dependency>
+	    <groupId>com.github.ocrsdkapp</groupId>
+	    <artifactId>ocr_sdk</artifactId>
+	    <version>Tag</version>
+	</dependency>
+```
+  
+  **GRADLE** 
+
+```gradle
+  
+  allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-  
-  **GRADLE** 
+	
   dependencies {
 	        implementation 'com.github.ocrsdkapp:ocr_sdk:b010d093e1'
 	}
-
+```
 ## License
 
 **OCRSDK** is available under the MIT license. See the LICENSE file for more info.
