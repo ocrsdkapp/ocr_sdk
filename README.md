@@ -73,7 +73,7 @@ it, simply add the following line to your build.gradle:
 	}
 	
   dependencies {
-	        implementation 'com.github.ocrsdkapp:ocr_sdk:b010d093e1'
+	        implementation 'com.github.ocrsdkapp:ocr_sdk:1.0.1'
 	}
 ```
 ## License
