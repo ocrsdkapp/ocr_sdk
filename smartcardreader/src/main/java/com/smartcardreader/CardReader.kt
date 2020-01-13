@@ -74,7 +74,7 @@ class CardReader internal constructor(
 
 
             GlobalScope.launch {
-                val cardInfo = performNormatlization(result)
+                val cardInfo = performNormatlization(result,bitmapArray)
                 val intent = Intent(context, Information::class.java)
                 intent.putExtra("data", cardInfo)
                 intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
@@ -172,9 +172,10 @@ class CardReader internal constructor(
         return designation
     }
 
-    fun performNormatlization(text: String): CardInfo {
+    fun performNormatlization(text: String, images : ArrayList<String>): CardInfo {
         var result = text
         val cardInfo = CardInfo()
+        cardInfo.images = images
         cardInfo.rawString = result
 
         val emails = ArrayList<String>()

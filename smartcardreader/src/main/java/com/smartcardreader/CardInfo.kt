@@ -3,6 +3,7 @@ package com.smartcardreader
 import java.io.Serializable
 
 data class CardInfo (
+    var images : List<String> = emptyList(),
     var emails : List<String> = emptyList(),
     var email: String="",
     var phoneNumbers : List<String> = emptyList(),
