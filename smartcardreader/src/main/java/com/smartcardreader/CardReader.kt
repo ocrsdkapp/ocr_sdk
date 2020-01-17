@@ -75,11 +75,12 @@ class CardReader internal constructor(
 
             GlobalScope.launch {
                 val cardInfo = performNormatlization(result,bitmapArray)
-                val intent = Intent(context, Information::class.java)
-                intent.putExtra("data", cardInfo)
-                intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
+//                 val intent = Intent(context, Information::class.java)
+//                 intent.putExtra("data", cardInfo)
+//                 intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
                 dd?.dismiss()
-                context.startActivity(intent)
+//                 context.startActivity(intent)
+                context.setResult(Activity.RESULT_OK, Intent().apply { putExtra(OCR_RES, cardInfo) })
                 context.finish()
             }
 
